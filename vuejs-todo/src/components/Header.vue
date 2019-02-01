@@ -2,7 +2,7 @@
   <header>
     <h1>{{greating}}</h1>
     <h2>{{message}}</h2>
-    <span>{{time}}</span>
+    <span>{{ hours }}:{{ minutes }}:{{ seconds }}</span>
   </header>
 </template>
 
@@ -12,13 +12,13 @@ export default {
   data() {
     return {
       greating: 'Welcome',
-      message: 'It is time to be productive!',
-      time: "#time"
+      message: 'It is time to be productive!'
     }
-  }
+  },
 
-
+  props: ['hours', 'minutes', 'seconds']
 }
+
 </script>
 
 <style scoped>
@@ -30,5 +30,9 @@ header {
   padding-bottom: 20px;
   border-radius: 25px;
   text-align: center;
+}
+
+span {
+  font-size: 30px;
 }
 </style>
